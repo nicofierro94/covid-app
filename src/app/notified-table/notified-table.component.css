@@ -1,0 +1,76 @@
+.container {
+	margin-right:auto;
+  margin-left:auto;
+	display:flex;
+	justify-content:center;
+  align-items: center;
+  flex-direction: column;
+}
+
+table {
+	width:100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th {
+	display:flex;
+	width:100%;
+  background:green;
+  color: white;
+  padding:(12 * 1.5) 0;
+  font-size: 30px;
+  text-transform:uppercase;
+  text-align: center;
+}
+
+tr {
+	display:flex;
+	width:100%;
+  padding:(12 * 1.5) 0;
+  border-bottom: black 1px solid;
+}
+
+tr:hover {
+  background-color: lightgreen;
+}
+
+th,td {
+  flex: 1 1 20%;
+  font-size: 23px;
+  /* text-align:center; */
+  align-items: center;
+}
+
+td {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.checkbox {
+  transform: scale(2);
+}
+
+.table-selected-row {
+  background-color: grey;
+  color: white;
+}
+
+.filter-input {
+  width: 100%;
+  display: grid;
+}
+
+.table-pagination {
+  align-items: center;
+}
+
+.pagination-component /deep/ .ngx-pagination .current {
+  color: white;
+  background-color: green;
+}
+
+.pagination-component /deep/ .ngx-pagination .current:hover {
+  color: black;
+  background-color: greenyellow;
+}
