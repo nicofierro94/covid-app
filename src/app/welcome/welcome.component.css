@@ -6,3 +6,23 @@ justify-content: center;
 img {
   margin-top: 60px;
 }
+
+.container {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.info-text {
+  margin-top: 100px;
+  margin-left: 40px;
+  margin-right: 80px;
+  font-size: xx-large;
+  font-family: monospace;
+}
+
+.powered-by {
+  margin-top: 100px;
+  color: #0c655a;
+  opacity: 0.6;
+}

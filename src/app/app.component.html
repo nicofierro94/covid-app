@@ -1,20 +1,44 @@
 <div class="toolbar">
   <div class="logo" routerLink="">
-    <img src="../assets/logo_blanco.svg"/>
+    <img src="../assets/logo_blanco.svg" />
   </div>
-  <h1 class="title">APLICACION PARA </h1><h1 class="title covid">COVID-19</h1>
-  <div class="logo">
-    <img id="covid" src="../assets/mini-covid.png"/>
+  <h1 routerLink="" class="title">APLICACION PARA</h1>
+  <h1 class="title covid" routerLink="">COVID-19</h1>
+  <div class="logo" routerLink="">
+    <img id="covid" src="../assets/mini-covid.png" />
   </div>
   <div class="toolbar-spacer"></div>
   <div class="toolbar-options">
-    <span routerLink="notified-table" routerLinkActive="toolbar-element-active" [routerLinkActiveOptions]="{ exact: true }"
-    class="toolbar-element">Notificaciones</span>
-    <span routerLink="inbox-table" routerLinkActive="toolbar-element-active" [routerLinkActiveOptions]="{ exact: true }"
-     class="toolbar-element">Bandeja</span>
+    <span
+      routerLink="notified-table"
+      routerLinkActive="toolbar-element-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="toolbar-element"
+      >Notificaciones</span
+    >
+    <span
+      routerLink="inbox-table"
+      routerLinkActive="toolbar-element-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="toolbar-element"
+      >Bandeja</span
+    >
   </div>
 </div>
 
 <div class="content">
   <router-outlet></router-outlet>
+  <ngx-spinner bdColor="rgba(255,255,255,0.6)">
+    <img class="spinner" width="450" src="../assets/logo-he.svg" />
+    <p
+      style="
+        color: #0c655a;
+        font-size: 60px;
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      "
+    >
+      Cargando...
+    </p>
+  </ngx-spinner>
 </div>

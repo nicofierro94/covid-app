@@ -1,63 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-interface Person {
-  name: string;
-  document: string;
-  mrn: string;
-  state: string;
-}
-
-const people = [
-  {
-    name: 'Nicolás Fierro',
-    document: '4.905157-7',
-    mrn: '78748',
-    state: 'Hecho mierda',
-  },
-  {
-    name: 'Paula Goicoa',
-    document: '4.415667-4',
-    mrn: '21415',
-    state: 'La más linda',
-  },
-  {
-    name: 'Alexander Wieler',
-    document: '3.141345-7',
-    mrn: '12445',
-    state: 'Sin espalda',
-  },
-  {
-    name: 'Ernesto Silva',
-    document: '4.445667-7',
-    mrn: '443322',
-    state: 'Tiene super poderes',
-  },
-  {
-    name: 'Guillermo Copernico',
-    document: '4.912347-7',
-    mrn: '78777',
-    state: 'Sabe demasiado',
-  },
-  {
-    name: 'Pedro Figari',
-    document: '4.987667-4',
-    mrn: '45687',
-    state: 'Pinta horrible',
-  },
-  {
-    name: 'Jessica Yolanda',
-    document: '3.788965-7',
-    mrn: '82541663',
-    state: 'Demasiado terraja',
-  },
-  {
-    name: 'Jose Gervaz',
-    document: '4.698667-7',
-    mrn: '98712365',
-    state: 'Juraba Artigas',
-  },
-];
+import { Person } from '../types/types';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-inbox-table',
@@ -76,7 +20,8 @@ export class InboxTableComponent {
 
   page: number = 1;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private notification: NotificationService) {
+    const people = notification.getInbox();
     this.masterSelected = false;
     for (let person of people) {
       let personCheck = { person: person, isSelected: false };
@@ -85,8 +30,6 @@ export class InboxTableComponent {
     this.checklist = this.peopleCheck;
     this.getCheckedItemList();
   }
-
-  ngOnInit(): void {}
 
   checkUncheckAll() {
     for (var i = 0; i < this.checklist.length; i++) {

@@ -1,15 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-interface Person {
-  name: string;
-  document: string;
-  mrn: string;
-  state: string;
-  type: string;
-  motive: string;
-  diagnostic: string;
-}
+import { Person } from '../types/types';
 
 @Component({
   selector: 'app-notified-detail',
@@ -18,7 +9,7 @@ interface Person {
 })
 export class NotifiedDetailComponent {
 
-  notify: Person;
+  notify: any;
 
   constructor(private router: Router) {
     this.notify = JSON.parse(localStorage.detail);

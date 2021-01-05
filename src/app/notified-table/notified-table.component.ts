@@ -1,15 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
-interface Person {
-  name: string;
-  document: string;
-  mrn: string;
-  state: string;
-  type: string;
-  motive: string;
-  diagnostic: string;
-}
+import { Person } from '../types/types';
+import { NotificationService } from '../services/notification.service';
 
 const people = [
   {
@@ -97,11 +89,12 @@ export class NotifiedTableComponent {
   people = []
   filterValue = "";
 
-  constructor(private router:Router)  {
-    this.people = people;
+  constructor(private router:Router, notification: NotificationService)  {
+    this.people = notification.getNotified();
   }
 
   detail(person: Person){
+    console.log(person);
     localStorage.setItem("detail", JSON.stringify(person));
     this.router.navigateByUrl('notified-detail');
   }

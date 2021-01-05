@@ -9,12 +9,12 @@
     <form [formGroup]="notifyForm" (ngSubmit)="onSubmit()">
       <label for="actions">Tipo de notificación: </label>
       <select formControlName="type" name="actions" id="actions">
-        <option value="1">Ingreso de internación</option>
-        <option value="2">Egreso de internación</option>
-        <option value="3">Detección de casos de COVID-19</option>
-        <option value="4">Alta de nuevos casos</option>
-        <option value="5">Seguimiento de casos</option>
-        <option value="6">Laboratorio</option>
+        <option value="Ingreso de internación">Ingreso de internación</option>
+        <option value="Egreso de internació">Egreso de internación</option>
+        <option value="Detección de casos de COVID-19">Detección de casos de COVID-19</option>
+        <option value="Alta de nuevos casos">Alta de nuevos casos</option>
+        <option value="Seguimiento de casos">Seguimiento de casos</option>
+        <option value="Laboratorio">Laboratorio</option>
       </select>
 
       <label for="motive">Motivo</label>
