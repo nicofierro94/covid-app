@@ -47,6 +47,15 @@ td {
   cursor: pointer;
 }
 
+.checkbox {
+  transform: scale(2);
+}
+
+.table-selected-row {
+  background-color: grey;
+  color: white;
+}
+
 .filter-input {
   width: 100%;
   display: grid;
@@ -75,11 +84,11 @@ td {
   background-color: greenyellow;
 }
 
-.detail {
-  cursor: pointer;
-  color: #0c655a;
+.notification-button {
+  transform: scale(2);
+  background-color: red;
 }
 
-.detail:hover {
-  color: white;
+.notification-button:hover {
+  background-color: pink;
 }

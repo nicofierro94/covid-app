@@ -1,11 +1,15 @@
 <div class="container">
   <div class="filter-input">
     <h3>Filtrar por:</h3>
-    <input
-      type="text"
-      [ngModel]="filterValue"
-      placeholder="Ingrese el valor que desea filtrar"
-    />
+    <div class="input-button">
+      <input
+        id="input-filter"
+        type="text"
+        [ngModel]="filterValue"
+        placeholder="Ingrese el valor que desea filtrar"
+      />
+      <button class="button-filter">Filtrar</button>
+    </div>
   </div>
   <table>
     <tr>
@@ -14,38 +18,21 @@
       <th>MRN</th>
       <th>Estado</th>
       <th>
-        <input
-          type="checkbox"
-          class="checkbox"
-          [(ngModel)]="masterSelected"
-          name="list_name"
-          id="cbox"
-          value="m1"
-          (change)="checkUncheckAll()"
-        />
       </th>
     </tr>
     <tr
       *ngFor="
-        let person of peopleCheck
+        let person of people
           | paginate: { itemsPerPage: 5, currentPage: page }
       "
-      [ngClass]="{ 'table-selected-row': person.isSelected }"
-      (click)="changeCheck(person.person.mrn)"
+      (click)="detail(person)"
     >
-      <td>{{ person.person.name }}</td>
-      <td>{{ person.person.document }}</td>
-      <td>{{ person.person.mrn }}</td>
-      <td>{{ person.person.state }}</td>
+      <td>{{ person.name }}</td>
+      <td>{{ person.document }}</td>
+      <td>{{ person.mrn }}</td>
+      <td>{{ person.state }}</td>
       <td>
-        <input
-          type="checkbox"
-          class="checkbox"
-          [(ngModel)]="person.isSelected"
-          name="list_name"
-          value="{{ person.person.mrn }}"
-          (change)="isAllSelected()"
-        />
+        <label class="detail">Ver detalle</label>
       </td>
     </tr>
   </table>
@@ -61,8 +48,4 @@
     >
     </pagination-controls>
   </div>
-</div>
-
-<div>
-  <code>{{ checkedList }}</code>
 </div>

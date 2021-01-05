@@ -1,0 +1,48 @@
+.container {
+	margin-right:50px;
+  margin-left:50px;
+	display: flex;
+	justify-content:center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+label, input, textarea, select {
+  display: block;
+  width: 100%;
+  margin: 2px;
+  line-height: 30px;
+}
+
+input, textarea, select {
+  border: none;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 2px;
+  background: white;
+  padding-left: 5px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #0c655a;
+}
+
+.form-notification {
+  width: 70%;
+  display: block;
+  margin-top: 30px;
+}
+
+div {
+  font-size: 24px;
+}
+
+select {
+  height: 30px;
+}
+
+.form-action {
+  height: 30px;
+}

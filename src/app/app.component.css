@@ -6,11 +6,11 @@
   height: 80px;
   display: flex;
   align-items: center;
-  background-color: green;
+  background-color: #0c655a;
   color: white;
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
-  box-shadow: 0px 5px 5px green;
+  box-shadow: 0px 5px 5px #0c655a;
 }
 
 .toolbar-spacer {
@@ -19,6 +19,7 @@
 
 .toolbar-element-active {
   color: lightblue;
+  text-decoration: overline;
 }
 
 .toolbar-element {
@@ -38,5 +39,22 @@
   margin-top: 85px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.logo {
+  margin-left: 15px;
+  margin-right: 30px;
+}
+
+#covid {
+  height: 90px;
+}
+
+.title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.covid {
+  color: pink;
 }
 

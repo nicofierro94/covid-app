@@ -1,10 +1,17 @@
 <div class="toolbar">
-  <h1>Aplicación para COVID-19</h1> <h3>** Mutualista Hospital Evangélico **</h3>
+  <div class="logo" routerLink="">
+    <img src="../assets/logo_blanco.svg"/>
+  </div>
+  <h1 class="title">APLICACION PARA </h1><h1 class="title covid">COVID-19</h1>
+  <div class="logo">
+    <img id="covid" src="../assets/mini-covid.png"/>
+  </div>
   <div class="toolbar-spacer"></div>
   <div class="toolbar-options">
-    <span class="toolbar-element">Bandeja</span>
     <span routerLink="notified-table" routerLinkActive="toolbar-element-active" [routerLinkActiveOptions]="{ exact: true }"
-     class="toolbar-element">Notificaciones</span>
+    class="toolbar-element">Notificaciones</span>
+    <span routerLink="inbox-table" routerLinkActive="toolbar-element-active" [routerLinkActiveOptions]="{ exact: true }"
+     class="toolbar-element">Bandeja</span>
   </div>
 </div>
 

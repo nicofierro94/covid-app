@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="filter-input">
+    <h3>Filtrar por:</h3>
+    <div class="input-button">
+      <input
+        id="input-filter"
+        type="text"
+        [ngModel]="filterValue"
+        placeholder="Ingrese el valor que desea filtrar"
+      />
+      <button class="button-filter">Filtrar</button>
+    </div>
+  </div>
+  <table>
+    <tr>
+      <th>Nombre y apellido</th>
+      <th>Documento</th>
+      <th>MRN</th>
+      <th>Estado</th>
+      <th>
+        <input
+          type="checkbox"
+          class="checkbox"
+          [(ngModel)]="masterSelected"
+          name="list_name"
+          id="cbox"
+          value="m1"
+          (change)="checkUncheckAll()"
+        />
+      </th>
+    </tr>
+    <tr
+      *ngFor="
+        let person of peopleCheck
+          | paginate: { itemsPerPage: 5, currentPage: page }
+      "
+      [ngClass]="{ 'table-selected-row': person.isSelected }"
+      (click)="changeCheck(person.person.mrn)"
+    >
+      <td>{{ person.person.name }}</td>
+      <td>{{ person.person.document }}</td>
+      <td>{{ person.person.mrn }}</td>
+      <td>{{ person.person.state }}</td>
+      <td>
+        <input
+          type="checkbox"
+          class="checkbox"
+          [(ngModel)]="person.isSelected"
+          name="list_name"
+          value="{{ person.person.mrn }}"
+          (change)="isAllSelected()"
+        />
+      </td>
+    </tr>
+  </table>
+  <div class="table-pagination">
+    <pagination-controls
+      class="pagination-component"
+      (pageChange)="page = $event"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+      directionLinks="true"
+      autoHide="true"
+      responsive="true"
+    >
+    </pagination-controls>
+  </div>
+  <button class="notification-button" (click)="notifyClick()">NOTIFICAR</button>
+  <div>
+    <h3>Se notificara a la siguientes personas:</h3>
+    <ul>
+      <li *ngFor="let person of checkedList">{{person.person.name}}</li>
+    </ul>
+  </div>
+</div>

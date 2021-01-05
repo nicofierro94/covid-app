@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="form-notification">
+    <form>
+      <label for="actions">Nombre</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder=""
+        disabled
+        [(ngModel)]="notify.name"
+      />
+      <label for="actions">Documento</label>
+      <input
+        type="text"
+        name="document"
+        id="document"
+        placeholder=""
+        disabled
+        [(ngModel)]="notify.document"
+      />
+      <label for="actions">MRN</label>
+      <input
+        type="text"
+        name="mrn"
+        id="mrn"
+        placeholder=""
+        disabled
+        [(ngModel)]="notify.mrn"
+      />
+      <label for="actions">Estado</label>
+      <input
+        type="text"
+        name="state"
+        id="state"
+        placeholder=""
+        disabled
+        [(ngModel)]="notify.state"
+      />
+      <label for="actions">Tipo de notificación</label>
+      <input
+        type="text"
+        name="type"
+        id="type"
+        placeholder="Escribe el tipo"
+        disabled
+        [(ngModel)]="notify.type"
+      />
+
+      <label for="motive">Motivo</label>
+      <input
+        type="text"
+        name="motive"
+        id="motive"
+        placeholder="Escribe el motivo"
+        disabled
+        [(ngModel)]="notify.motive"
+      />
+
+      <label for="diagnostic">Diagnostico</label>
+      <textarea
+        type="text"
+        name="diagnostic"
+        id="diagnostic"
+        placeholder="Escribe el motivo"
+        disabled
+        [(ngModel)]="notify.diagnostic"
+      ></textarea>
+    </form>
+    <div class="form-action">
+      <button (click)="back()">Volver</button>
+    </div>
+  </div>
+</div>
